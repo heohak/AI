@@ -142,7 +142,7 @@ if __name__ == '__main__':
             print("Running BFS...")
             start_time = time.time()
             path = bfs(map_data, start, goal)
-            #print("BFS path:", path)
+            # print("BFS path:", path)
             print("Time taken:", time.time() - start_time)
             print("Iterations:", len(path))
             print("Path length:", len(path) - 1)
@@ -152,7 +152,7 @@ if __name__ == '__main__':
             print("Running Greedy Search...")
             start_time = time.time()
             path = greedy(map_data, start, goal)
-            #print("Greedy path:", path)
+            # print("Greedy path:", path)
             print("Time taken:", time.time() - start_time)
             print("Iterations:", len(path))
             print("Path length:", len(path) - 1)
@@ -162,12 +162,8 @@ if __name__ == '__main__':
             print("Running A* Search...")
             start_time = time.time()
             path = astar(map_data, start, goal)
-            #print("A* path:", path)
+            # print("A* path:", path)
             print("Time taken:", time.time() - start_time)
             print("Iterations:", len(path))
             print("Path length:", len(path) - 1)
             print("------")
-
-
-
-
