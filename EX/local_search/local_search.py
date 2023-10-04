@@ -3,9 +3,9 @@ import random
 class NQueens:
     def __init__(self, N):
         self.N = N
-        self.state = list(range(N))  # Initialize the board state where index represents row and value represents column
-        random.shuffle(self.state)  # Shuffle to get a random initial state
-        self.conflicts = self.value()  # Find the initial set of conflicting queen pairs.
+        self.state = list(range(N))
+        random.shuffle(self.state)
+        self.conflicts = self.value()
 
     def value(self):
         conflicts = set()
@@ -42,12 +42,12 @@ class NQueens:
 
             self.state[i] = original_col  # Reset the column back to original after all moves are checked for the queen
 
-        return random.choice(candidates) if candidates else None  # Return a random move from the candidate moves
+        return random.choice(candidates) if candidates else None
 
 def hill_climbing(queens):
-    while queens.conflicts:  # Continue until there are conflicts
+    while queens.conflicts:
         move = queens.best_move()
-        if not move:  # Stop if no move can reduce the number of conflicts
+        if not move:
             break
         queens.make_move()
 
@@ -59,7 +59,7 @@ def print_board(state):
         print(' '.join(row))
 
 if __name__ == "__main__":
-    N = 4
+    N = 32
     queens = NQueens(N)
     print("Initial Board:")
     print_board(queens.state)
