@@ -15,6 +15,11 @@ class NQueens:
                 if self.state[i] == self.state[j] or abs(self.state[i] - self.state[j]) == abs(i - j):
                     conflicts.add((i, j))  # Add conflicting pairs to the set
         return conflicts
+    def make_move(self):
+        move = queens.best_move()
+        i, j, original_col = move
+        queens.state[i] = j  # Make the best move
+        queens.conflicts = queens.value()  # Update conflicts after the move
 
     def best_move(self):
         candidates = []
@@ -44,9 +49,7 @@ def hill_climbing(queens):
         move = queens.best_move()
         if not move:  # Stop if no move can reduce the number of conflicts
             break
-        i, j, original_col = move
-        queens.state[i] = j  # Make the best move
-        queens.conflicts = queens.value()  # Update conflicts after the move
+        queens.make_move()
 
 def print_board(state):
     N = len(state)
@@ -56,7 +59,7 @@ def print_board(state):
         print(' '.join(row))
 
 if __name__ == "__main__":
-    N = 8
+    N = 4
     queens = NQueens(N)
     print("Initial Board:")
     print_board(queens.state)
@@ -65,5 +68,3 @@ if __name__ == "__main__":
     print("Final Board:")
     print_board(queens.state)
     print("Final Conflicts:", len(queens.conflicts))
-
-
