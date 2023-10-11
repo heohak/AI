@@ -6,7 +6,7 @@ The program checks for winning conditions after every move.
 The Monte Carlo simulation runs 200 times for every move to estimate the best move for the computer.
 Game statistics are updated in "game_stats.txt"
 
-Here is an example of the moves and their percentages during the game:
+### Here is an example of the moves and their percentages during the game:
 
  | | | | | | <br>
  | | | | | | <br>

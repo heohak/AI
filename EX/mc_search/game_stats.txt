@@ -1,14 +1,13 @@
- | | | | | | 
- | | | | | | 
- | | | | | | 
- | | | | | | 
-X| | | |X| | 
-X| | |O|O|O| 
+ | | | | |X| 
+ | | | | |O| 
+ | | |O|X|O| 
+ | | |X|O|O| 
+ | | |O|X|X| 
+ |O|X|O|X|X| 
 0123456
-Move 0: Winning Percentage = 88.00%
-Move 1: Winning Percentage = 76.50%
-Move 2: Winning Percentage = 100.00%
-Move 3: Winning Percentage = 80.50%
-Move 4: Winning Percentage = 86.00%
-Move 5: Winning Percentage = 81.50%
-Move 6: Winning Percentage = 100.00%
+Move 0: Winning Percentage = 59.25%
+Move 1: Winning Percentage = 69.25%
+Move 2: Winning Percentage = 55.75%
+Move 3: Winning Percentage = 56.50%
+Move 4: Winning Percentage = 60.25%
+Move 6: Winning Percentage = 53.50%

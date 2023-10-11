@@ -150,7 +150,6 @@ def write_stats_to_file(board):
 def main():
     while True:
         play_game()
-
         # Check if the game has ended and then write the final stats
         again = input("Play again? (y/n): ")
         if again.lower() != 'y':
