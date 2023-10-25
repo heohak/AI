@@ -28,7 +28,7 @@ if __name__ == '__main__':
     ]
 
     query = "Q"
-    print(forward_chaining(clauses, query))  # Output should be True
+    print(forward_chaining(clauses, query))
 
     clauses = [
         ([], "Egg_is_fragile"),
@@ -42,5 +42,5 @@ if __name__ == '__main__':
     queries = ["Egg_breaks", "Egg_makes_a_mess", "Egg_smells"]
     results = [forward_chaining(clauses, query) for query in queries]
 
-    print(results)  # Output should be [True, True, False]
+    print(results)
 
