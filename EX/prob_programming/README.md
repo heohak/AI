@@ -5,28 +5,32 @@ We employ generative models to estimate probabilities under certain conditions. 
 
 #### Problem 1:
 ````
-var batteries = function() {
-    var battery1 = flip(0.9);
-    var battery2 = flip(0.9);
-    var battery3 = flip(0.9);
-    var battery4 = flip(0.9);
-    return [battery1, battery2, battery3, battery4];
-};
+var genA = function () {
+  var battery1 = flip(0.9);
+  var battery2 = flip(0.9);
+  var battery3 = flip(0.9);
+  var battery4 = flip(0.9);
+  
+  // Ensure at least one battery is empty
+  var atLeastOneEmpty = !battery1 || !battery2 || !battery3 || !battery4;
+  condition(atLeastOneEmpty);
 
-var gen = function() {
-    var pack = batteries();
-    condition(_.some(pack, function(b) { return !b; }));
-    return _.countBy(pack, _.identity).false === 1;
-};
+  // Count how many batteries are full
+  var fullBatteries = battery1 + battery2 + battery3 + battery4;
+  
+  // We're interested in the cases where exactly three batteries are full
+  return fullBatteries === 3;
+}
 
-viz(Infer({method: "rejection", samples: 10000}, gen));
+viz(Infer({method: "enumerate"}, genA));
+
 ````
 
 Result:
 
 ![img.png](img.png)
 
-Probability of exactly three batteries being full: 29.12%
+Probability of exactly three batteries being full: 84.79%
 
 
 
