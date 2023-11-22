@@ -1,0 +1,30 @@
+#  var batteries = function() {
+#      var battery1 = flip(0.9);
+#     var battery2 = flip(0.9);
+#     var battery3 = flip(0.9);
+#     var battery4 = flip(0.9);
+#     return [battery1, battery2, battery3, battery4];
+# };
+#
+# var gen = function() {
+#     var pack = batteries();
+#     // Condition: at least one battery is empty
+#     condition(_.some(pack, function(b) { return !b; }));
+#     // Check if exactly three batteries are full
+#     return _.countBy(pack, _.identity).false === 1;
+# };
+#
+# viz(Infer({method: "rejection", samples: 10000}, gen));
+#
+#
+# var gen = function() {
+#     var battery2 = flip(0.9);
+#     var battery3 = flip(0.9);
+#     var battery4 = flip(0.9);
+#     // First battery is known to be half-empty
+#     var pack = [false, battery2, battery3, battery4];
+#     // Check if the remaining three batteries are full
+#     return _.countBy(pack, _.identity).false === 1;
+# };
+#
+# viz(Infer({method: "rejection", samples: 10000}, gen));
